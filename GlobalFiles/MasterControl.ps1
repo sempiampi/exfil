@@ -1,8 +1,10 @@
 #URLS
+<#
 https://tinyurl.com/exfilmc <> MasterControl.ps1
 https://tinyurl.com/exfilpins <> AutomatedTaskWithPingInstall.ps1
 https://tinyurl.com/exfilvins <> TaskSchedulerServiceCreator.ps1
 https://tinyurl.com/exfilactivation <> ActivationWithAutomatedInstall.ps1
+#>
 
 #Variables
 $AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
