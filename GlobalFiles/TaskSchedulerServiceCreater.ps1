@@ -1,11 +1,3 @@
-<# Creates Core task. 
-IMPORTANT LINKS
-https://tinyurl.com/highcmdctrl <> MasterControl.ps1
-https://tinyurl.com/highcmdpinstall <> AutomatedTaskWithPingInstall.ps1
-https://tinyurl.com/highcmdvinstall <> TaskSchedulerServiceCreator.ps1
-https://tinyurl.com/highcmdactivation <> ActivationWithAutomatedInstall.ps1
-#>
-
 # Encoded Command
 <#
 $AvailableTls = [enum]::GetValues('Net.SecurityProtocolType') | Where-Object { $_ -ge 'Tls12' }
